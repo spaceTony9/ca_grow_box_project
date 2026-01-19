@@ -4,9 +4,6 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
 
-// WiFi credentials
-// #define WIFI_NETWORK "iPhone von Anton"
-// #define WIFI_PASSWORD "00000000"
 #define WIFI_TIMEOUT_MS 20000
 
 // MQTT settings

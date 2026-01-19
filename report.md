@@ -45,7 +45,7 @@ The primary objective of this project is to develop an automated plant care syst
 - **WiFi/MQTT Module (connectToWifi.cpp/h):** Responsible for wifi and communication service
 - **Sensor Libraries:** Adafruit SHT31 for temperature/humidity sensing
 
-## 3. Detauled System Description
+## 3. Detailed System Description
 
 ### 3.1 Sensors
 
