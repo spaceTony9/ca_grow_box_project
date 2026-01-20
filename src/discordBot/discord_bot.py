@@ -122,11 +122,18 @@ async def status(ctx):
     # Request fresh status
     mqtt_client.publish(MQTT_TOPIC_CONTROL, "STATUS")
     
+    # Wait up to 3 seconds for response
+    import asyncio
+    for i in range(6):  # 6 attempts, 500ms each = 3 seconds
+        if plant_status["temperature"] is not None:
+            break
+        await asyncio.sleep(0.5)
+    
     if plant_status["temperature"] is None:
         await ctx.send("⏳ Waiting for data from ESP32... Please try again in a moment.")
         return
     
-    #  pump status
+    # Rest of your status command code...
     pump_enabled = plant_status.get("pump_enabled", True)
     pump_status = "🟢 Enabled" if pump_enabled else "🔴 Disabled"
     
